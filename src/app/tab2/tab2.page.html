@@ -4,17 +4,15 @@
       <ion-icon name="wallet-outline" class="custom-icon"></ion-icon>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-icon name="sync-outline" class="custom-icon"></ion-icon>
+      <img src="assets\vechain.png" alt="Vechain Icon" />
+      <ion-icon name="sync-outline" class="custom-icon" (click)="sync()"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
+  <div class="warning-card">
+    <p>⚠️ Warning: You have unsynced driving data. Sync to earn VET 🤑🤑🤑 ⚠️</p>
+  </div>
   <app-explore-container name="Tab 2 page"></app-explore-container>
 </ion-content>

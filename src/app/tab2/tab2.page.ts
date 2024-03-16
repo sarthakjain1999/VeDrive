@@ -32,5 +32,10 @@ addIcons({
   ],
 })
 export class Tab2Page {
+  isSynced = false;
   constructor() {}
+
+  sync() {
+    this.isSynced = true;
+  }
 }

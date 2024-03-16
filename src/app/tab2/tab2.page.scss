@@ -15,6 +15,29 @@ ion-toolbar {
   width: 100%;
 }
 
-.custom-icon {
-    font-size: 150%;
+.custom-icon, img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .warning-card {
+    background-color: lightyellow;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    color: black;
+  }
+  
+  .warning-card p {
+    font-weight: bold;
+  }
+  
+  .fade-out {
+    animation: fadeOut 1s forwards;
+  }
+  
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
   }
