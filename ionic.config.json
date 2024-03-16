@@ -1,0 +1,7 @@
+{
+  "name": "VeDriveApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
