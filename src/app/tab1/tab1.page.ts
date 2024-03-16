@@ -6,8 +6,7 @@ import {
   IonContent,
   IonItem,
   IonLabel,
-  IonList,
-} from '@ionic/angular/standalone';
+  IonList, IonCardContent, IonCard, IonIcon } from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { HistoricDriveService } from '../services/historic-drive.service';
 import { CommonModule } from '@angular/common';
@@ -18,7 +17,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   standalone: true,
-  imports: [
+  imports: [IonIcon, IonCard, IonCardContent, 
     IonList,
     IonHeader,
     IonToolbar,
@@ -28,6 +27,7 @@ import { CommonModule } from '@angular/common';
     IonItem,
     IonLabel,
     CommonModule,
+    IonCard
   ],
 })
 export class Tab1Page {
