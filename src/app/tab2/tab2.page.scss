@@ -15,46 +15,64 @@ ion-toolbar {
   width: 100%;
 }
 
-.custom-icon, img {
-    width: 40px;
-    height: 40px;
-  }
+.custom-icon,
+img {
+  width: 40px;
+  height: 40px;
+}
 
-  .warning-card {
-    background-color: lightyellow;
-    border-radius: 15px;
-    padding: 10px;
-    margin: 10px;
-    font-size: 16px;
-    color: black;
-  }
-  
-  .warning-card p {
-    font-weight: bold;
-  }
-  
-  .fade-out {
-    animation: fadeOut 1s forwards;
-  }
-  
-  @keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
-  }
+.warning-card {
+  background-color: lightyellow;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 16px;
+  color: black;
+}
 
-  .custom-icon.disabled {
-    opacity: 0.5;
-    pointer-events: none;
-  }
+.warning-card p {
+  font-weight: bold;
+}
 
-  .chart-image {
-    width: 100%;
-    height: 30vh;
-    object-fit: fill;
-  }
+.fade-out {
+  animation: fadeOut 1s forwards;
+}
 
-  .gauge-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@keyframes fadeOut {
+  from {
+    opacity: 1;
   }
+  to {
+    opacity: 0;
+  }
+}
+
+.custom-icon.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.chart-image {
+  width: 100%;
+  height: 30vh;
+  object-fit: fill;
+}
+
+.gauge-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.custom-icon.spinning {
+  animation: spin 2s linear;
+}

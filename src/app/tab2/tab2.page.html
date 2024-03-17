@@ -10,6 +10,7 @@
         name="sync-outline"
         class="custom-icon"
         [class.disabled]="isSynced"
+        [class.spinning]="isSpinning"
         (click)="sync()"
       ></ion-icon>
     </ion-buttons>

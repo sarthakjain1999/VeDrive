@@ -53,12 +53,14 @@ export class Tab2Page {
   );
 
   isSynced = false;
+  isSpinning: boolean = false;
   constructor(private historicDriveService: HistoricDriveService) {}
 
-  sync() {
+  async sync() {
     if (this.isSynced) {
       return;
     }
+    this.isSpinning = true;
 
     this.isSynced = true;
     this.historicDriveService.incrementBalance(15);
@@ -66,6 +68,9 @@ export class Tab2Page {
       this.historicDriveService.getCurrentBalance()
     );
     console.log('Syncing...');
+    await new Promise(resolve => setTimeout(resolve, 2000)); // Wait for 2 seconds
+
+    this.isSpinning = false;
     this.isSynced = true;
   }
 }
