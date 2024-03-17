@@ -66,7 +66,7 @@ export class Tab2Page {
       return;
     }
     this.isSpinning = true;
-    this.http.get('http://localhost:3000').subscribe((data) => {});
+    this.http.get('http://localhost:3000', {responseType: 'text'}).subscribe((data) => {console.log(data);});
 
     this.isSynced = true;
     this.historicDriveService.incrementBalance(15);
