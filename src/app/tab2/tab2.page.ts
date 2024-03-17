@@ -18,6 +18,7 @@ import { HistoricDriveService } from '../services/historic-drive.service';
 import { BehaviorSubject } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { NgxGaugeModule } from 'ngx-gauge';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 addIcons({
   'wallet-outline': walletOutline,
@@ -43,6 +44,7 @@ addIcons({
     ExploreContainerComponent,
     CommonModule,
     NgxGaugeModule,
+    HttpClientModule,
   ],
 })
 export class Tab2Page {
@@ -54,13 +56,17 @@ export class Tab2Page {
 
   isSynced = false;
   isSpinning: boolean = false;
-  constructor(private historicDriveService: HistoricDriveService) {}
+  constructor(
+    private historicDriveService: HistoricDriveService,
+    private http: HttpClient
+  ) {}
 
   async sync() {
     if (this.isSynced) {
       return;
     }
     this.isSpinning = true;
+    this.http.get('http://localhost:3000').subscribe((data) => {});
 
     this.isSynced = true;
     this.historicDriveService.incrementBalance(15);
@@ -68,7 +74,7 @@ export class Tab2Page {
       this.historicDriveService.getCurrentBalance()
     );
     console.log('Syncing...');
-    await new Promise(resolve => setTimeout(resolve, 2000)); // Wait for 2 seconds
+    await new Promise((resolve) => setTimeout(resolve, 2000)); // Wait for 2 seconds
 
     this.isSpinning = false;
     this.isSynced = true;

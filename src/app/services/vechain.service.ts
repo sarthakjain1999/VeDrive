@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class VechainService {
+  constructor(private http: HttpClient) {}
 
-  constructor() { }
+  getData() {
+    return this.http.get('http://localhost:3000');
+  }
 }
