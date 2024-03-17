@@ -5,13 +5,19 @@ import {
   IonTitle,
   IonContent,
   IonIcon,
-  IonButtons, IonCardHeader, IonCard, IonCardContent, IonCardTitle } from '@ionic/angular/standalone';
+  IonButtons,
+  IonCardHeader,
+  IonCard,
+  IonCardContent,
+  IonCardTitle,
+} from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { addIcons } from 'ionicons';
 import { syncOutline, walletOutline } from 'ionicons/icons';
 import { HistoricDriveService } from '../services/historic-drive.service';
 import { BehaviorSubject } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { NgxGaugeModule } from 'ngx-gauge';
 
 addIcons({
   'wallet-outline': walletOutline,
@@ -23,7 +29,11 @@ addIcons({
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
   standalone: true,
-  imports: [IonCardTitle, IonCardContent, IonCard, IonCardHeader, 
+  imports: [
+    IonCardTitle,
+    IonCardContent,
+    IonCard,
+    IonCardHeader,
     IonButtons,
     IonIcon,
     IonHeader,
@@ -31,10 +41,13 @@ addIcons({
     IonTitle,
     IonContent,
     ExploreContainerComponent,
-    CommonModule
+    CommonModule,
+    NgxGaugeModule,
   ],
 })
 export class Tab2Page {
+  gaugeValue = 65;
+
   public currentBalanceSubject = new BehaviorSubject<number>(
     this.historicDriveService.getCurrentBalance()
   );
@@ -46,7 +59,7 @@ export class Tab2Page {
     if (this.isSynced) {
       return;
     }
-    
+
     this.isSynced = true;
     this.historicDriveService.incrementBalance(15);
     this.currentBalanceSubject.next(

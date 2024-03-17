@@ -29,13 +29,24 @@
     <ion-card-content
       ><strong>{{ currentBalance }} VET</strong></ion-card-content
     >
-
   </ion-card>
 
   <ion-card>
     <ion-card-content>
-      <img class="chart-image" src="assets/monthly_earnings_VET_2024-03-17.png" alt="Monthly Earnings Chart">
+      <img
+        class="chart-image"
+        src="assets/monthly_earnings_VET_2024-03-17.png"
+        alt="Monthly Earnings Chart"
+      />
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">Safety Score</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content class="gauge-container">
+      <ngx-gauge [value]="gaugeValue"> </ngx-gauge>
     </ion-card-content>
   </ion-card>
 </ion-content>
-

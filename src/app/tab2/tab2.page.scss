@@ -52,3 +52,9 @@ ion-toolbar {
     height: 30vh;
     object-fit: fill;
   }
+
+  .gauge-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
