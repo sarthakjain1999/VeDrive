@@ -5,14 +5,37 @@
     </ion-buttons>
     <ion-buttons slot="end">
       <img src="assets\vechain.png" alt="Vechain Icon" />
-      <ion-icon name="sync-outline" class="custom-icon" (click)="sync()"></ion-icon>
+      <ion-icon
+        name="sync-outline"
+        class="custom-icon"
+        [class.disabled]="isSynced"
+        (click)="sync()"
+      ></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="warning-card">
-    <p>⚠️ Warning: You have unsynced driving data. Sync to earn VET 🤑🤑🤑 ⚠️</p>
+  <div class="warning-card" *ngIf="!isSynced">
+    <p>
+      ⚠️ Warning: You have unsynced driving data. Sync to earn VET 🤑🤑🤑 ⚠️
+    </p>
   </div>
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+
+  <ion-card *ngIf="currentBalanceSubject | async as currentBalance">
+    <ion-card-header>
+      <ion-card-title>Your Balance 💰</ion-card-title>
+    </ion-card-header>
+    <ion-card-content
+      ><strong>{{ currentBalance }} VET</strong></ion-card-content
+    >
+
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <img class="chart-image" src="assets/monthly_earnings_VET_2024-03-17.png" alt="Monthly Earnings Chart">
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+

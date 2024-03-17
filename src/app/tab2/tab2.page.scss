@@ -41,3 +41,14 @@ ion-toolbar {
     from { opacity: 1; }
     to { opacity: 0; }
   }
+
+  .custom-icon.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .chart-image {
+    width: 100%;
+    height: 30vh;
+    object-fit: fill;
+  }

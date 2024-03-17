@@ -12,6 +12,16 @@ export interface HistoricTripData {
   providedIn: 'root',
 })
 export class HistoricDriveService {
+  private balance = 450;
+
+  getCurrentBalance(): number {
+    return this.balance;
+  }
+
+  incrementBalance(amount: number): void {
+    this.balance += amount;
+  }
+
   private historicData: HistoricTripData[] = [
     {
       date: new Date('2022-01-01'),
