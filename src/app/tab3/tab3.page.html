@@ -1,17 +1,21 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+    <ion-title> AI Chat </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card class="message-bubble">
+    <ion-card-content> how do I improve my safety score?  </ion-card-content>
+  </ion-card>
+  <ion-card class="message-bubble">
+    <ion-card-content> do I brake too much?  </ion-card-content>
+  </ion-card>
+  <ion-card class="message-bubble">
+    <ion-card-content>✨ powered by GPT-4 ✨</ion-card-content>
+  </ion-card>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-item lines="none" class="custom-input">
+    <ion-input placeholder="Ask a question..."></ion-input>
+  </ion-item>
 </ion-content>

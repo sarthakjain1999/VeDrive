@@ -1,0 +1,46 @@
+ion-header {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+ion-toolbar {
+  border-radius: 15px;
+  padding: 0 10px;
+}
+
+.custom-input {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-radius: 25px;
+  background-color: rgb(228, 218, 218);
+}
+
+.message-bubble {
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.custom-input {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-radius: 25px;
+  background-color: grey;
+}
+
+.custom-input ion-label {
+  text-align: center;
+  width: 100%;
+  background-color: grey;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.message-bubble {
+  width: 80%;
+  margin: 10px auto;
+  border-radius: 25px;
+  text-align: center;
+}
